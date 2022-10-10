@@ -10,6 +10,7 @@ public class Can_Drop : MonoBehaviour
     void Start()
     {
         can_sound = GetComponent<AudioSource>();
+         Debug.Log("Code Acccessed");
     }
 
     void OnCollisionEnter(Collision collision)
@@ -19,9 +20,10 @@ public class Can_Drop : MonoBehaviour
         //     Debug.DrawRay(contact.point, contact.normal, Color.white);
         // }
         // if (collision.relativeVelocity.magnitude > 2) can_sound.Play();
-        Debug.Log($"{gameObject.name} is colliding with {collision.collider.name}");
-        if (collision.relativeVelocity.magnitude > 0.5) {
+        Debug.Log("Hand Collision");
+        if (collision.relativeVelocity.magnitude >1) {
             if (!can_sound.isPlaying) {
+                Debug.Log($"{gameObject.name} is colliding with {collision.collider.name}");
                 can_sound.Play();
             }
         }
@@ -38,7 +40,7 @@ public class Can_Drop : MonoBehaviour
 //     {
 //         can_sound = GetComponent<AudioSource>(); 
 //     }
-//     public void Bounce(CollisionNotifier.EventData data)
+//     public void can_collision(CollisionNotifier.EventData data)
 //     {
 //         Debug.Log("Colllision Detected");
 //         if(!can_sound.isPlaying)
