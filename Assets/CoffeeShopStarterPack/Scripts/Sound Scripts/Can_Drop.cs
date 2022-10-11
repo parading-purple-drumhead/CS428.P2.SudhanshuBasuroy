@@ -9,7 +9,7 @@ public class Can_Drop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        can_sound = GetComponent<AudioSource>();
+        // can_sound = GetComponent<AudioSource>();
          Debug.Log("Code Acccessed");
     }
 
@@ -21,9 +21,9 @@ public class Can_Drop : MonoBehaviour
         // }
         // if (collision.relativeVelocity.magnitude > 2) can_sound.Play();
         Debug.Log("Hand Collision");
-        if (collision.relativeVelocity.magnitude >1) {
+        if (collision.relativeVelocity.magnitude > 3) {
             if (!can_sound.isPlaying) {
-                Debug.Log($"{gameObject.name} is colliding with {collision.collider.name}");
+                Debug.Log($"{gameObject.name} is colliding with {collision.collider.name} with velocity {collision.relativeVelocity.magnitude} ");
                 can_sound.Play();
             }
         }
