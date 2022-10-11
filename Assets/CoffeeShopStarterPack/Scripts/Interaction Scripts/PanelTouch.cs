@@ -8,7 +8,7 @@ public class PanelTouch : MonoBehaviour
     public bool generating_bill;
     void Start()
     {
-        // Debug.Log("Item Touched!!!!");
+        // Debug.Log("Item Touched!!!!");s
     }
 
     // Update is called once per frame
