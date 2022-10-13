@@ -8,15 +8,32 @@ public class SpawnVendingObject : MonoBehaviour
     public AudioSource vending_sound;
     public GameObject prefab;
     public Vector3 spawnPosition;
+    public bool is_empty;
     void Start()
     {
-        // Debug.Log("Item Touched!!!!");s
+        // Debug.Log("Item Touched!!!!");
+        is_empty = true;
     }
 
     public void button_pressed(CollisionNotifier.EventData data)
     {
         
-        if(!vending_sound.isPlaying)
+        Collider[] hitColliders = Physics.OverlapSphere(spawnPosition, 0.25f);
+        string log = "";
+        foreach( Collider collider in hitColliders )
+                    {
+                        if (collider.name == "Chips" || collider.name == "Chocolates")
+                        {
+                            is_empty = false;
+                            break;
+                        }
+                        else
+                            {
+                                is_empty = true;
+                            }
+                    }
+        Debug.Log($"{log}");
+        if(!vending_sound.isPlaying && is_empty)
         {
             vending_sound.Play ();
             StartCoroutine(process_item());
