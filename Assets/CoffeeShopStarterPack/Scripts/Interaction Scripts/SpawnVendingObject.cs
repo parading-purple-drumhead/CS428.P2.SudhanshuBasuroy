@@ -25,7 +25,7 @@ public class SpawnVendingObject : MonoBehaviour
         string log = "";
         foreach (Collider collider in hitColliders)
         {
-            if (collider.name == "Chips" || collider.name == "Hersheys")
+            if (collider.name == "Chips" || collider.name == "Hersheys" || collider.name == "Candy")
             {
                 is_empty = false;
                 break;
