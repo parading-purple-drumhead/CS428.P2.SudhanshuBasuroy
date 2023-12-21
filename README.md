@@ -1,4 +1,4 @@
-# Virtual Reality Convenience Store Kiosk
+# VR Convenience Store Kiosk
 
 ## Description
 
